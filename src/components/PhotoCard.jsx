@@ -56,7 +56,7 @@ const PhotoCard = ({ photo, isInCart, onAddToCart }) => {
           ) : (
             <>
               <ShoppingCart className="h-4 w-4" />
-              Add to Cart
+              Buy
             </>
           )}
         </Button>

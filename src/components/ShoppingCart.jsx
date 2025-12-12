@@ -135,7 +135,7 @@ const ShoppingCart = ({ items, isOpen, onClose, onRemoveItem, onPurchase }) => {
               disabled={items.length === 0}
             >
               <Sparkles className="h-4 w-4" />
-              Complete Purchase
+              Pay
             </Button>
           </div>
         </div>
