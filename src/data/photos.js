@@ -1,67 +1,83 @@
-import beachImg from "@/assets/photos/beach.jpg";
-import mountainsImg from "@/assets/photos/mountains.jpg";
-import forestImg from "@/assets/photos/forest.jpg";
-import cityImg from "@/assets/photos/city.jpg";
-import flowersImg from "@/assets/photos/flowers.jpg";
-import desertImg from "@/assets/photos/desert.jpg";
-import auroraImg from "@/assets/photos/aurora.jpg";
-import vineyardImg from "@/assets/photos/vineyard.jpg";
+import f1 from "@/assets/photos/f1.jpg";
+import f2 from "@/assets/photos/f2.jpg";
+import f3 from "@/assets/photos/f3.jpg";
+import f4 from "@/assets/photos/f4.jpg";
+import f5 from "@/assets/photos/f5.jpg";
+import f6 from "@/assets/photos/f6.jpg";
+import f7 from "@/assets/photos/f7.jpg";
+import f8 from "@/assets/photos/f8.jpg";
+import f9 from "@/assets/photos/f9.jpg";
+import f10 from "@/assets/photos/f10.jpg";
 
 export const initialPhotos = [
   {
     id: "1",
-    title: "Tropical Paradise",
-    price: 29,
-    image: beachImg,
+    title: "Photo 1",
+    price: "₹2",
+    image: f1,
     category: "Nature",
   },
   {
     id: "2",
-    title: "Alpine Sunset",
-    price: 39,
-    image: mountainsImg,
+    title: "Photo 2",
+    price: "₹3",
+    image: f2,
     category: "Landscape",
   },
   {
     id: "3",
-    title: "Misty Forest",
-    price: 25,
-    image: forestImg,
+    title: "Photo 3",
+    price: "₹2",
+    image: f3,
     category: "Nature",
   },
   {
     id: "4",
-    title: "Neon Nights",
-    price: 45,
-    image: cityImg,
+    title: "Photo 4",
+    price: "₹4",
+    image: f4,
     category: "Urban",
   },
   {
     id: "5",
-    title: "Cherry Blossoms",
-    price: 22,
-    image: flowersImg,
+    title: "Photo 5",
+    price: "₹2",
+    image: f5,
     category: "Flowers",
   },
   {
     id: "6",
-    title: "Desert Dunes",
-    price: 35,
-    image: desertImg,
+    title: "Photo 6",
+    price: "₹3",
+    image: f6,
     category: "Landscape",
   },
   {
     id: "7",
-    title: "Northern Lights",
-    price: 55,
-    image: auroraImg,
+    title: "Photo 7",
+    price: "₹5",
+    image: f7,
     category: "Nature",
   },
   {
     id: "8",
-    title: "Tuscan Vineyard",
-    price: 32,
-    image: vineyardImg,
-    category: "Travel",
+    title: "Photo 8",
+    price: "₹2",
+    image: f8,
+    category: "Urban",
+  },
+  {
+    id: "9",
+    title: "Photo 9",
+    price: "₹3",
+    image: f9,
+    category: "Flowers",
+  },
+  {
+    id: "10",
+    title: "Photo 10",
+    price: "₹4",
+    image: f10,
+    category: "Landscape",
   },
 ];

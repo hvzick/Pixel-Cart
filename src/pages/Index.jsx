@@ -20,7 +20,7 @@ const Index = () => {
     }
     setCartItems((prev) => [...prev, photo]);
     toast.success("Added to cart!", {
-      description: `${photo.title} - $${photo.price}`,
+      description: `${photo.title} - ${photo.price}`,
     });
   };
 
@@ -40,14 +40,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-12">
         <div className="mb-12 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl text-glow">
             Curated Collection
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover and collect exclusive digital artworks from around the world
+            Discover and collect exclusive digital artworks from around the
+            world
           </p>
         </div>
 

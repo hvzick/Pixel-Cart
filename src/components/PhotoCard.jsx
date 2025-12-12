@@ -9,7 +9,7 @@ const PhotoCard = ({ photo, isInCart, onAddToCart }) => {
         <Sparkles className="h-3 w-3" />
         NFT
       </div>
-      
+
       <div className="aspect-[4/3] overflow-hidden">
         <img
           src={photo.image}
@@ -19,10 +19,10 @@ const PhotoCard = ({ photo, isInCart, onAddToCart }) => {
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
       </div>
-      
+
       {/* Hover overlay with glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      
+
       {/* Content */}
       <div className="p-4 relative">
         <div className="flex items-center justify-between mb-3">
@@ -37,11 +37,11 @@ const PhotoCard = ({ photo, isInCart, onAddToCart }) => {
           <div className="text-right">
             <span className="text-xs text-muted-foreground">Price</span>
             <p className="font-display text-xl font-bold text-accent">
-              ${photo.price}
+              {photo.price}
             </p>
           </div>
         </div>
-        
+
         <Button
           variant="gallery"
           className="w-full"

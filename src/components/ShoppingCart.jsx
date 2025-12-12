@@ -2,13 +2,7 @@ import { Button } from "@/components/ui/button";
 import { X, ShoppingBag, Trash2, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
-const ShoppingCart = ({
-  items,
-  isOpen,
-  onClose,
-  onRemoveItem,
-  onPurchase,
-}) => {
+const ShoppingCart = ({ items, isOpen, onClose, onRemoveItem, onPurchase }) => {
   const total = items.reduce((sum, item) => sum + item.price, 0);
 
   const handlePurchase = () => {
@@ -17,9 +11,14 @@ const ShoppingCart = ({
       return;
     }
     onPurchase();
-    toast.success(`Successfully purchased ${items.length} NFT${items.length > 1 ? 's' : ''}!`, {
-      description: `Total: $${total}`,
-    });
+    toast.success(
+      `Successfully purchased ${items.length} NFT${
+        items.length > 1 ? "s" : ""
+      }!`,
+      {
+        description: `Total: ${total}`,
+      }
+    );
   };
 
   return (
@@ -47,7 +46,9 @@ const ShoppingCart = ({
               </div>
               <div>
                 <h2 className="font-display text-xl font-bold">Your Cart</h2>
-                <p className="text-xs text-muted-foreground">{items.length} items</p>
+                <p className="text-xs text-muted-foreground">
+                  {items.length} items
+                </p>
               </div>
             </div>
             <button
@@ -67,7 +68,9 @@ const ShoppingCart = ({
                   <Sparkles className="absolute -right-2 top-0 h-6 w-6 text-primary/50" />
                 </div>
                 <p className="mt-4 font-display text-lg">Your cart is empty</p>
-                <p className="text-sm text-muted-foreground">Add some NFTs to get started!</p>
+                <p className="text-sm text-muted-foreground">
+                  Add some NFTs to get started!
+                </p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -87,12 +90,16 @@ const ShoppingCart = ({
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-display font-semibold">{item.title}</h4>
-                      <p className="text-xs text-muted-foreground">{item.category}</p>
+                      <h4 className="font-display font-semibold">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-muted-foreground">
+                        {item.category}
+                      </p>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="font-display text-lg font-bold text-accent">
-                        ${item.price}
+                        {item.price}
                       </span>
                       <Button
                         variant="cartItem"
@@ -112,7 +119,9 @@ const ShoppingCart = ({
           <div className="border-t border-border p-6 bg-secondary/30">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-muted-foreground">Total</span>
-              <span className="font-display text-3xl font-bold text-accent">${total}</span>
+              <span className="font-display text-3xl font-bold text-accent">
+                {total}
+              </span>
             </div>
             <Button
               variant="cart"
