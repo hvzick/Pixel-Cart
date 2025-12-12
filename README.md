@@ -1,73 +1,230 @@
-# Welcome to your Lovable project
+# Pixel Cart - NFT Photo Gallery & Shopping Cart
 
-## Project info
+A modern, responsive web application for browsing and purchasing photo NFTs. Built with React, Vite, and Tailwind CSS with a beautiful UI powered by shadcn/ui components and Radix UI primitives.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- 🎨 **Beautiful Photo Gallery** - Display 10 high-quality photo NFTs with smooth animations
+- 🛒 **Shopping Cart** - Add/remove items from cart with real-time total calculation
+- 💳 **Purchase System** - Complete transactions with persistent data storage
+- 💰 **Rupee Pricing** - All prices displayed in Indian Rupees (₹)
+- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
+- 🎭 **Modern UI** - Dark mode with glassmorphism effects and smooth animations
+- 💾 **Persistent Storage** - Purchased items remain removed even after page refresh
+- 📲 **Toast Notifications** - Real-time feedback for user actions
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend Framework**: React 18+
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui + Radix UI
+- **Icons**: Lucide React
+- **Toast Notifications**: Sonner
+- **State Management**: React Hooks with localStorage
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+src/
+├── components/
+│   ├── ui/                 # shadcn/ui components
+│   │   ├── button.jsx
+│   │   ├── dialog.jsx
+│   │   ├── sheet.jsx
+│   │   └── ... (40+ UI components)
+│   ├── CartButton.jsx      # Floating cart button
+│   ├── Header.jsx          # Navigation header
+│   ├── PhotoCard.jsx       # Individual photo display
+│   ├── PhotoGallery.jsx    # Gallery grid layout
+│   └── ShoppingCart.jsx    # Shopping cart panel
+├── pages/
+│   ├── Index.jsx           # Main gallery page
+│   └── NotFound.jsx        # 404 page
+├── data/
+│   └── photos.js           # Photo data with prices
+├── hooks/
+│   ├── use-mobile.js       # Mobile detection
+│   └── use-toast.js        # Toast notifications
+├── lib/
+│   └── utils.js            # Utility functions (cn, classnames)
+├── assets/
+│   └── photos/             # Photo images (f1.jpg - f10.jpg)
+├── App.jsx                 # Root component
+├── main.jsx                # Entry point
+└── index.css               # Global styles with Tailwind
+```
 
-**Use your preferred IDE**
+## Available Photos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The application comes with 10 photo NFTs:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Photo 1 - ₹2
+- Photo 2 - ₹3
+- Photo 3 - ₹2
+- Photo 4 - ₹4
+- Photo 5 - ₹2
+- Photo 6 - ₹3
+- Photo 7 - ₹5
+- Photo 8 - ₹2
+- Photo 9 - ₹3
+- Photo 10 - ₹4
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js 16+
+- npm or yarn
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd pixel-cart-13-main
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+### Development
+
+Run the development server:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will start at `http://localhost:8080/`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build
 
-**Use GitHub Codespaces**
+Create a production build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+### Preview Production Build
 
-This project is built with:
+```bash
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Lint Code
 
-## How can I deploy this project?
+```bash
+npm run lint
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Usage
 
-## Can I connect a custom domain to my Lovable project?
+### Adding Items to Cart
 
-Yes, you can!
+1. Browse the photo gallery
+2. Click "Add to Cart" button on any photo card
+3. A toast notification confirms the item was added
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Viewing Cart
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Click the floating cart button in the bottom-right corner
+2. View all items in the cart panel
+3. See the total price calculated automatically
+
+### Removing Items
+
+1. Open the cart panel
+2. Click the trash icon next to any item to remove it
+
+### Completing a Purchase
+
+1. Click the "Complete Purchase" button in the cart
+2. A success toast will confirm the transaction
+3. Purchased items are permanently removed from the gallery
+4. Changes persist across page refreshes
+
+## Key Features Explained
+
+### Persistent Storage
+
+- Uses browser's `localStorage` to save which photos have been purchased
+- Prevents items from reappearing after page refresh
+- Clear localStorage to reset the gallery
+
+### Real-time Total Calculation
+
+- Automatically sums the price of all items in the cart
+- Extracts numeric values from rupee-formatted prices
+- Updates instantly when items are added/removed
+
+### Responsive Design
+
+- Mobile-optimized shopping cart (slides in from right)
+- Touch-friendly buttons and interactions
+- Adaptive layout for all screen sizes
+
+### Toast Notifications
+
+- Action confirmations (added to cart, purchased)
+- Error messages (empty cart, already in cart)
+- Custom styling matching the application theme
+
+## Configuration
+
+### Adding New Photos
+
+Edit `src/data/photos.js`:
+
+```javascript
+{
+  id: "11",
+  title: "Photo 11",
+  price: "₹5",
+  image: f11,
+  category: "Nature",
+}
+```
+
+Then import the image at the top of the file:
+
+```javascript
+import f11 from "@/assets/photos/f11.jpg";
+```
+
+### Changing Prices
+
+Simply update the `price` field in `src/data/photos.js` with the desired rupee amount.
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Future Enhancements
+
+- User authentication
+- Wishlist feature
+- Multiple currency support
+- Payment gateway integration
+- Admin panel for managing photos
+- Order history
+- Customer reviews and ratings
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Author
+
+Created as a modern e-commerce photo NFT gallery application.
+
+---
+
+**Happy shopping! 🎨🛒**
