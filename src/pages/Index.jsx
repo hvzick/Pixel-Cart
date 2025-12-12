@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { initialPhotos } from "@/data/photos";
 import Header from "@/components/Header";
 import PhotoGallery from "@/components/PhotoGallery";
@@ -7,9 +7,16 @@ import CartButton from "@/components/CartButton";
 import { toast } from "sonner";
 
 const Index = () => {
-  const [availablePhotos, setAvailablePhotos] = useState(initialPhotos);
+  const [availablePhotos, setAvailablePhotos] = useState(() => {
+    const saved = localStorage.getItem("availablePhotos");
+    return saved ? JSON.parse(saved) : initialPhotos;
+  });
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("availablePhotos", JSON.stringify(availablePhotos));
+  }, [availablePhotos]);
 
   const handleAddToCart = (photo) => {
     if (cartItems.find((item) => item.id === photo.id)) {
@@ -44,11 +51,10 @@ const Index = () => {
       <main className="container mx-auto px-4 py-12">
         <div className="mb-12 text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl text-glow">
-            Curated Collection
+            Flower Collection
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover and collect exclusive digital artworks from around the
-            world
+            Discover and collect exclusive flowers from around the world
           </p>
         </div>
 

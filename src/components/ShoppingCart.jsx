@@ -3,7 +3,11 @@ import { X, ShoppingBag, Trash2, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 const ShoppingCart = ({ items, isOpen, onClose, onRemoveItem, onPurchase }) => {
-  const total = items.reduce((sum, item) => sum + item.price, 0);
+  const total = items.reduce((sum, item) => {
+    const priceValue = parseInt(item.price.replace(/[^\d]/g, ""));
+    return sum + priceValue;
+  }, 0);
+  const totalDisplay = `₹${total}`;
 
   const handlePurchase = () => {
     if (items.length === 0) {
@@ -16,7 +20,7 @@ const ShoppingCart = ({ items, isOpen, onClose, onRemoveItem, onPurchase }) => {
         items.length > 1 ? "s" : ""
       }!`,
       {
-        description: `Total: ${total}`,
+        description: `Total: ${totalDisplay}`,
       }
     );
   };
@@ -120,7 +124,7 @@ const ShoppingCart = ({ items, isOpen, onClose, onRemoveItem, onPurchase }) => {
             <div className="mb-4 flex items-center justify-between">
               <span className="text-muted-foreground">Total</span>
               <span className="font-display text-3xl font-bold text-accent">
-                {total}
+                {totalDisplay}
               </span>
             </div>
             <Button
