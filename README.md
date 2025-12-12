@@ -127,8 +127,8 @@ npm run lint
 ### Adding Items to Cart
 
 1. Browse the photo gallery
-2. Click "Add to Cart" button on any photo card
-3. A toast notification confirms the item was added
+2. Click "Buy" button on any photo card
+3. A toast notification confirms the item was added to cart
 
 ### Viewing Cart
 
@@ -143,7 +143,7 @@ npm run lint
 
 ### Completing a Purchase
 
-1. Click the "Complete Purchase" button in the cart
+1. Click the "Pay" button in the cart
 2. A success toast will confirm the transaction
 3. Purchased items are permanently removed from the gallery
 4. Changes persist across page refreshes
