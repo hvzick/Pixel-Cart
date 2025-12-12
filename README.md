@@ -83,7 +83,7 @@ The application comes with 10 photo NFTs:
 
 ```bash
 git clone <repository-url>
-cd pixel-cart-13-main
+cd pixel-cart
 ```
 
 2. Install dependencies
